@@ -1,0 +1,53 @@
+<% include header.ejs %>
+<div class="container">
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <h2>Skills</h2>
+                <br/>
+                <form class="form-horizontal" enctype="multipart/form-data">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Name</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" disabled="disabled" title="name"
+                                       value="Aaa Aaa"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" disabled="disabled" title="email"
+                                       value="test@test.com"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Skills</label>
+                            <div class="col-lg-10"><a href="/addskilltodev/:id" class="btn btn-xs btn-primary"
+                                                      onclick="return confirm('Are you sure you want to delete this item?');">x</a><span> Itt van már pár skill...</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-6 col-lg-offset-2">
+                                <div class="input-group">
+                                    <select name="skillId" class="form-control" title="skills">
+                                        <select name="developerId" class="form-control" title="developers">
+                                            <% for (skill in skills) { var item = skill %>
+                                            <option value=<%= skills[item].name %>></option>
+                                            <% } %>
+                                        </select>
+                                    </select>
+                                    <span class="input-group-btn">
+									<button href="/addskilltodev/:id" type="submit"
+                                            class="btn btn-default">Add skill</button>
+								</span>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<% include footer.ejs %>

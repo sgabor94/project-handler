@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Developers skills</title>
+
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand">ProjectHandler</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>
+                    <span>Home</span></a>
+            </li>
+            <li>
+                <a href="developer.html"><i class="fa fa-user" aria-hidden="true"></i>
+                    <span>Developers</span></a>
+            </li>
+            <li>
+                <a href="skills.html"><i class="fa fa-rocket" aria-hidden="true"></i><span>Skills</span></a>
+            </li>
+            <li>
+                <a href="project.html"><i class="fa fa-rocket" aria-hidden="true"></i><span>Projects</span></a>
+            </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a><i class="fa fa-key" aria-hidden="true"></i> <span> About</span></a></li>
+            <li>
+                <a href="login.html"><span class="glyphicon glyphicon-log-in"></span> <span> Login</span></a>
+            </li>
+            <li>
+                <a href="login.html">
+                    <span class="glyphicon glyphicon-log-out"></span> <span> Logout</span></a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span>Language</span>
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a>Hungarian</a></li>
+                    <li><a>English</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<form name="logoutForm">
+    <input hidden type="submit" value="Sign Out"/>
+</form>
+
+<div class="container">
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <h2>Skills</h2>
+                <br/>
+                <form class="form-horizontal" enctype="multipart/form-data">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Name</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" disabled="disabled" title="name"
+                                       value="Aaa Aaa"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" disabled="disabled" title="email"
+                                       value="test@test.com"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Skills</label>
+                            <div class="col-lg-10"><a href="adddevskill.html" class="btn btn-xs btn-primary"
+                                                      onclick="return confirm('Are you sure you want to delete this item?');">x</a><span> Itt van már pár skill...</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-6 col-lg-offset-2">
+                                <div class="input-group">
+                                    <select name="skillId" class="form-control" title="skills">
+                                        <option value="1">Javascript language skill</option>
+                                        <option value="2">Java language skill</option>
+                                        <option value="3">HTML skill</option>
+                                        <option value="4">CSS skill</option>
+                                    </select>
+                                    <span class="input-group-btn">
+									<button href="adddevskill.html" type="submit"
+                                            class="btn btn-default">Add skill</button>
+								</span>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

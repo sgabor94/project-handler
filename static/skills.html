@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Skills</title>
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand">ProjectHandler</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>
+                    <span>Home</span></a>
+            </li>
+            <li>
+                <a href="developer.html"><i class="fa fa-user" aria-hidden="true"></i>
+                    <span>Developers</span></a>
+            </li>
+            <li>
+                <a href="skills.html"><i class="fa fa-rocket" aria-hidden="true"></i><span>Skills</span></a>
+            </li>
+            <li>
+                <a href="project.html"><i class="fa fa-rocket" aria-hidden="true"></i><span>Projects</span></a>
+            </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a><i class="fa fa-key" aria-hidden="true"></i> <span> About</span></a></li>
+            <li>
+                <a href="login.html"><span class="glyphicon glyphicon-log-in"></span> <span> Login</span></a>
+            </li>
+            <li>
+                <a href="login.html">
+                    <span class="glyphicon glyphicon-log-out"></span> <span> Logout</span></a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span>Language</span>
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a>Hungarian</a></li>
+                    <li><a>English</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<form name="logoutForm">
+    <input hidden type="submit" value="Sign Out"/>
+</form>
+<div class="container">
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-6 col-md-7 col-sm-6">
+
+                <h3>Add a skill</h3>
+                <br/>
+                <form enctype="multipart/form-data" class="form-horizontal">
+                    <div class="alert alert-danger">
+                        <p>Please correct errors</p>
+                        <br/>
+                        <div>
+                            <ul>
+                                <li>
+                                    Error detail
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Skill name</label>
+                            <div class="col-lg-9">
+                                <input id="skillName" type="text" class="form-control" name="skillName"
+                                       title="skillName"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Description</label>
+                            <div class="col-lg-9">
+                                <input id="description" type="text" class="form-control" name="description" title="description"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-12 col-lg-offset-3">
+                                <button href="skills.html" type="submit" class="btn btn-primary" name="button">Create
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Skills</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>Skill name</th>
+                                <th>Description</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Node</td>
+                                <td>Node skill</td>
+                                <td>
+                                    <a href="skills.html" class="btn btn-danger glyphicon glyphicon-trash"
+                                       onclick="return confirm('Are you sure you want to delete this item?');"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Css</td>
+                                <td>Css skill</td>
+                                <td>
+                                    <a href="skills.html" class="btn btn-danger glyphicon glyphicon-trash"
+                                       onclick="return confirm('Are you sure you want to delete this item?');"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Html</td>
+                                <td>Html skill</td>
+                                <td>
+                                    <a href="skills.html" class="btn btn-danger glyphicon glyphicon-trash"
+                                       onclick="return confirm('Are you sure you want to delete this item?');"></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

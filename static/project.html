@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Project</title>
+
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand">ProjectHandler</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>
+                    <span>Home</span></a>
+            </li>
+            <li>
+                <a href="developer.html"><i class="fa fa-user" aria-hidden="true"></i>
+                    <span>Developers</span></a>
+            </li>
+            <li>
+                <a href="skills.html"><i class="fa fa-rocket" aria-hidden="true"></i><span>Skills</span></a>
+            </li>
+            <li>
+                <a href="project.html"><i class="fa fa-rocket" aria-hidden="true"></i><span>Projects</span></a>
+            </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a><i class="fa fa-key" aria-hidden="true"></i> <span> About</span></a></li>
+            <li>
+                <a href="login.html"><span class="glyphicon glyphicon-log-in"></span> <span> Login</span></a>
+            </li>
+            <li>
+                <a href="login.html">
+                    <span class="glyphicon glyphicon-log-out"></span> <span> Logout</span></a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span>Language</span>
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a>Hungarian</a></li>
+                    <li><a>English</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<form name="logoutForm">
+    <input hidden type="submit" value="Sign Out"/>
+</form>
+
+<div class="container">
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-6 col-md-7 col-sm-6">
+
+                <h3>Add a project</h3>
+                <h3>OR</h3>
+                <h3>Update project</h3>
+                <br/>
+                <form enctype="multipart/form-data" class="form-horizontal">
+                    <div class="alert alert-danger">
+                        <p>Please correct errors</p>
+                        <br/>
+                        <div>
+                            <ul>
+                                <li>
+                                    Error detail
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Project name</label>
+                        <div class="col-lg-9">
+                            <input id="projectName" type="text" class="form-control" name="projectName"
+                                   title="projectName"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Required Manday</label>
+                        <div class="col-lg-9">
+                            <input id="reqManday" type="number" class="form-control" name="reqManday"
+                                   title="reqManday"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Comment</label>
+                        <div class="col-lg-9">
+                            <input id="comment" type="text" class="form-control" name="comment" title="comment"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Due date</label>
+                        <div class="col-lg-9">
+                            <input id="dueDate" type="date" class="form-control" name="dueDate" title="dueDate"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Required skills</label>
+                        <div class="col-lg-6"><a href="project.html" class="btn btn-xs btn-primary"
+                                                 onclick="return confirm('Are you sure you want to delete this item?');">x</a>
+                            <span> Java language skill</span></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-6 col-lg-offset-2">
+                            <div class="input-group">
+                                <select name="skillId" class="form-control" title="skills">
+                                    <option value="1">Javascript language skill</option>
+                                    <option value="2">Java language skill</option>
+                                    <option value="3">HTML skill</option>
+                                    <option value="4">CSS skill</option>
+                                </select>
+                                <span class="input-group-btn">
+									<button href="project.html" type="submit" class="btn btn-default">Add skill</button>
+								</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12 col-lg-offset-3">
+                            <button type="submit" class="btn btn-primary" name="button">Create
+                            </button>
+                        </div>
+                        <div class="col-lg-12 col-lg-offset-3">
+                            <button type="submit" class="btn btn-primary" name="button">Update
+                            </button>
+                            <a id="btn-cook" class="btn btn-warning"
+                               role="button">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <h3>Projects</h3>
+                <br/>
+                <form method="get" enctype="multipart/form-data" class="form-horizontal">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Name</label>
+                            <div class="col-lg-9">
+                                <input id="nameFilter" type="text" class="form-control" name="nameFilter"
+                                       title="nameFilter"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Due date</label>
+                            <div class="col-lg-9">
+                                <input id="dueDateFiler" type="date" class="form-control" name="dueDateFiler"
+                                       title="dueDateFiler"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12 col-lg-offset-3">
+                                <button href="project.html" type="submit" class="btn btn-primary">Filter
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Manday</th>
+                        <th>Due date</th>
+                        <th>Required skills</th>
+                        <th>Developers</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><span>Node hazi feladat</span></td>
+                        <td><span>10</span></td>
+                        <td><span>2018.03.04</span></td>
+                        <td><span>Node, Html, CSS</span></td>
+                        <td><span>FJ4IA9</span></td>
+                        <td>
+                            <a href="addprojectdev.html" class="btn btn-success">Developers</a>
+                            <a href="project.html" class="btn btn-primary">Edit</a>
+                            <a href="project.html" class="btn btn-danger"
+                               onclick="return confirm('Are you sure you want to delete this item?');"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span>Reggel felkelni</span></td>
+                        <td><span>1</span></td>
+                        <td><span>2018.03.04</span></td>
+                        <td><span>Android</span></td>
+                        <td><span>FJ4IA9</span></td>
+                        <td>
+                            <a href="addprojectdev.html" class="btn btn-success">Developers</a>
+                            <a href="project.html" class="btn btn-primary">Edit</a>
+                            <a href="project.html" class="btn btn-danger"
+                               onclick="return confirm('Are you sure you want to delete this item?');"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span>Bukom miden targyam</span></td>
+                        <td><span>14x7</span></td>
+                        <td><span>2018.05.31</span></td>
+                        <td><span>-</span></td>
+                        <td><span>FJ4IA9</span></td>
+                        <td>
+                            <a href="addprojectdev.html" class="btn btn-success">Developers</a>
+                            <a href="project.html" class="btn btn-primary">Edit</a>
+                            <a href="project.html" class="btn btn-danger"
+                               onclick="return confirm('Are you sure you want to delete this item?');"><span
+                                    class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

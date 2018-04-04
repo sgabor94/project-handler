@@ -1,0 +1,31 @@
+<% include header.ejs %>
+<div class="container">
+    <div style="margin: 0 auto; margin-top: 30px; width: 40%">
+        <div>
+            <div id="login-alert" class="alert alert-danger alert-dismissable row col-md-12 text-center">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                <span>Login failed!</span>
+            </div>
+        </div>
+
+        <form id="loginform" role="form">
+            <div style="margin-bottom: 25px" class="input-group row col-md-12 text-center">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="login-username" type="text" class="form-control" name="username" value="" title="username">
+            </div>
+            <div style="margin-bottom: 25px" class="input-group row col-md-12 text-center">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input id="login-password" type="password" class="form-control" name="password" title="password">
+            </div>
+            <div class="form-group row col-md-12 text-center">
+                <a href="/login">Forgotten password</a>
+            </div>
+            <div class="form-group row col-md-12 text-center">
+                <div>
+                    <input id="btn-login" href="/developers" class="btn btn-success" type="button" value="Login"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<% include footer.ejs %>
