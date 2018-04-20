@@ -5,6 +5,30 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 // app.use(express.static('public'));
 
+var mongoose = require('mongoose');
+var Schema = require('mongoose').Schema;
+mongoose.connect('mongodb://localhost/project');
+
+var Developer = mongoose.model('Developer', {
+    firstname: String,
+    lastname: String,
+    email: String,
+    level: String,
+    _skills: {
+        type: Schema.Types.ObjectId,
+        ref: 'Skill'
+    }
+});
+
+var d = new Developer();
+d.firstname = 'Pista';
+d.save(function (err) {
+    console.log(err);
+    console.log(d);
+});
+
+// module.exports = Developer;
+
 /**
  * Create tpl on res object
  */
