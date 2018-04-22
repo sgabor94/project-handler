@@ -6,8 +6,10 @@ module.exports = function (app) {
     var getAllSkillsMW = require('../middleware/skill/getAllSkills');
     var deleteSkillMW = require('../middleware/skill/deleteSkill');
 
+    var skillModel = require('../models/skill');
+
     var objRep = {
-        skillModel: {}
+        skillModel: skillModel
     };
 
     /**
@@ -15,6 +17,7 @@ module.exports = function (app) {
      */
     app.get('/skills/add',
         authMW(objRep),
+        createSkillMW(objRep),
         getAllSkillsMW(objRep),
         renderMW(objRep, 'skills')
     );
@@ -29,10 +32,11 @@ module.exports = function (app) {
         renderMW(objRep, 'skills')
     );
 
+
     /**
      * Delete skill
      */
-    app.get('/skills/delete',
+    app.get('/skills/delete/:id',
         authMW(objRep),
         getSkillMW(objRep),
         deleteSkillMW(objRep),

@@ -5,10 +5,18 @@ var requireOption = require('../common').requireOption;
  */
 module.exports = function (objectrepository) {
 
-    var skillModel = requireOption(objectrepository, 'skillModel');
-
     return function (req, res, next) {
-        console.log("deleteSkill");
-        return next();
+        console.log('deleteSkill');
+        if (typeof res.tpl.skill === 'undefined') {
+            return next();
+        }
+
+        res.tpl.skill.remove(function (err) {
+            if (err) {
+                return next(err);
+            }
+
+            res.redirect('/skills/');
+        });
     };
 };

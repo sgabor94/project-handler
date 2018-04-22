@@ -1,7 +1,7 @@
 var Schema = require('mongoose').Schema;
 var db = require('../config/db');
 
-var Developer = mongoose.model('Developer', {
+var developerModel =  db.model('Developer', {
     firstname: String,
     lastname: String,
     email: String,
@@ -12,4 +12,4 @@ var Developer = mongoose.model('Developer', {
     }
 });
 
-module.exports = Developer;
+module.exports = developerModel;

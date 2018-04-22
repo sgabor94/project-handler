@@ -1,42 +1,29 @@
 var express = require('express');
 var app = express();
+// var session = require('express-session');
+var bodyParser = require('body-parser');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
-// app.use(express.static('public'));
-
-var mongoose = require('mongoose');
-var Schema = require('mongoose').Schema;
-mongoose.connect('mongodb://localhost/project');
-
-var Developer = mongoose.model('Developer', {
-    firstname: String,
-    lastname: String,
-    email: String,
-    level: String,
-    _skills: {
-        type: Schema.Types.ObjectId,
-        ref: 'Skill'
-    }
-});
-
-var d = new Developer();
-d.firstname = 'Pista';
-d.save(function (err) {
-    console.log(err);
-    console.log(d);
-});
-
-// module.exports = Developer;
 
 /**
  * Create tpl on res object
  */
 app.use(function (req, res, next) {
     res.tpl = {};
-    console.log('tpl created');
+    // console.log('tpl created');
     return next();
 });
+
+/**
+ * Parse parameters in POST
+ */
+// for parsing application/json
+app.use(bodyParser.json());
+// for parsing application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 /**
  * Include all routes

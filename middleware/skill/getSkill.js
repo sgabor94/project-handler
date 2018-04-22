@@ -10,14 +10,16 @@ module.exports = function (objectrepository) {
     var skillModel = requireOption(objectrepository, 'skillModel');
 
     return function (req, res, next) {
-        console.log("getSkill");
-        res.tpl.skill =
-            {
-                id: 1,
-                name: 'Java',
-                description: "Java language skill"
-            };
-        console.log('typeof skill: ' + typeof skill);
-        return next();
+
+        skillModel.findOne({
+            _id: req.params.id
+        }, function (err, result) {
+            if ((err) || (!result)) {
+                return req.redirect('/skills');
+            }
+
+            res.tpl.skill = result;
+            return next();
+        });
     };
 };

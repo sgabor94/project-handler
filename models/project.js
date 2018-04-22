@@ -1,7 +1,7 @@
 var Schema = require('mongoose').Schema;
 var db = require('../config/db');
 
-var Project = mongoose.model('Project', {
+var projectModel =  db.model('Project', {
     name: String,
     manday: Number,
     dueDate: Date,
@@ -15,5 +15,5 @@ var Project = mongoose.model('Project', {
     }
 });
 
-module.exports = Project;
+module.exports = projectModel;
 

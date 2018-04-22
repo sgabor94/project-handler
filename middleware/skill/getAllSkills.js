@@ -9,24 +9,14 @@ module.exports = function (objectrepository) {
     var skillModel = requireOption(objectrepository, 'skillModel');
 
     return function (req, res, next) {
-        console.log("getSkills");
-        res.tpl.skills = [
-            {
-                id: 1,
-                name: 'Java',
-                description: 'Java language skill'
-            },
-            {
-                id: 2,
-                name: 'Node',
-                description: 'Node language skill'
-            },
-            {
-                id: 3,
-                name: 'PHP',
-                description: 'PHP language skill'
-            },
-        ];
-        return next();
+        console.log("getAllSkills");
+        skillModel.find(function (err, results) {
+            if (!err) {
+                res.tpl.skills = results;
+            } else {
+                console.log(err);
+            }
+            return next();
+        });
     };
 };
